@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Octokit } from "octokit";
 
 async function getLastCommit() {

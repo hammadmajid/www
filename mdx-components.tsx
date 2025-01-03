@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { getHighlighter } from "shiki";
 
 let highlighter: Awaited<ReturnType<typeof getHighlighter>> | null = null;

@@ -1,5 +1,5 @@
 import type { Project } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Github, Globe } from "lucide-react";
 
 interface ProjectCardProps {
