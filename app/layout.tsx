@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -7,7 +7,7 @@ import { ViewTransitions } from "next-view-transitions";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 
-const ibmPlexMono = IBM_Plex_Mono({
+const atkinsonHyperlegible = Atkinson_Hyperlegible({
   subsets: ["latin"],
   weight: "400",
   preload: true,
@@ -37,7 +37,7 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${ibmPlexMono.className} h-full flex flex-col antialiased max-w-screen-lg mx-auto`}
+          className={`${atkinsonHyperlegible.className} h-full flex flex-col antialiased max-w-screen-lg mx-auto`}
         >
           <Navbar />
           <main className="px-4 py-6 flex-grow space-y-2">{children}</main>
