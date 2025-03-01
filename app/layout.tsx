@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { ViewTransitions } from "next-view-transitions";
 
@@ -31,9 +29,7 @@ export default function RootLayout({
 				<body
 					className={`${atkinsonHyperlegible.className} h-full flex flex-col antialiased max-w-(--breakpoint-lg) mx-auto`}
 				>
-					<Navbar />
 					<main className="p-4 grow">{children}</main>
-					<Footer />
 					<Analytics />
 				</body>
 			</html>
