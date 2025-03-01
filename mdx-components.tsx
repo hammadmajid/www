@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from "react";
-import { Link } from "next-view-transitions";
+import Link from "@/components/link";
 import { getHighlighter } from "shiki";
 
 let highlighter: Awaited<ReturnType<typeof getHighlighter>> | null = null;
@@ -33,13 +33,13 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
 	h1: (props: HeadingProps) => (
-		<h1 className="font-bold text-2xl pt-12 mb-3 fade-in" {...props} />
+		<h1 className="font-bold text-2xl mb-3 fade-in" {...props} />
 	),
 	h2: (props: HeadingProps) => (
-		<h2 className="font-semibold text-xl mt-8 mb-3" {...props} />
+		<h2 className="font-semibold text-xl mt-4 mb-3" {...props} />
 	),
 	h3: (props: HeadingProps) => (
-		<h3 className="font-medium mt-8 mb-3" {...props} />
+		<h3 className="font-medium mt-4 mb-3" {...props} />
 	),
 	h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
 	p: (props: ParagraphProps) => (
@@ -59,31 +59,17 @@ const components = {
 		<strong className="font-medium" {...props} />
 	),
 	a: ({ href, children, ...props }: AnchorProps) => {
-		const className = "text-light-accent hover:text-light-accent-hover";
-		if (href?.startsWith("/")) {
+		if (href?.startsWith("/") || href?.startsWith("#")) {
 			return (
-				<Link href={href} className={className} {...props}>
+				<Link href={href} {...props}>
 					{children}
 				</Link>
 			);
 		}
-		if (href?.startsWith("#")) {
-			return (
-				<a href={href} className={className} {...props}>
-					{children}
-				</a>
-			);
-		}
 		return (
-			<a
-				href={href}
-				target="_blank"
-				rel="noopener noreferrer"
-				className={className}
-				{...props}
-			>
+			<Link href={href as string} external={true} {...props}>
 				{children}
-			</a>
+			</Link>
 		);
 	},
 	code: async ({
