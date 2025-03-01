@@ -7,16 +7,10 @@ interface LinkProps {
 }
 
 export default function Link({ href, children, external = false }: LinkProps) {
-	const target = external ? "_blank" : "_self";
 	const rel = external ? "noopener noreferrer" : undefined;
 
 	return external ? (
-		<a
-			href={href}
-			target={target}
-			rel={rel}
-			className="text-primary hover:text-primary-hover"
-		>
+		<a href={href} rel={rel} className="text-primary hover:text-primary-hover">
 			{children}
 		</a>
 	) : (
