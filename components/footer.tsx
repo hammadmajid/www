@@ -44,7 +44,7 @@ export async function Footer() {
 				<p className="text-sm ">
 					<Link
 						href="/meta#license"
-						className="hover:text-light-accent focus:outline-none focus:text-light-accent"
+						className="hover:text-light-accent focus:outline-hidden focus:text-light-accent"
 					>
 						Unlicensed
 					</Link>{" "}
@@ -55,14 +55,14 @@ export async function Footer() {
 						Last built on{" "}
 						<Link
 							href={commitInfo.url}
-							className="hover:text-light-accent focus:outline-none focus:text-light-accent"
+							className="hover:text-light-accent focus:outline-hidden focus:text-light-accent"
 						>
 							{commitInfo.hash}
 						</Link>{" "}
 						at {commitInfo.date} with{" "}
 						<Link
 							href="https://nextjs.org/"
-							className="hover:text-light-accent focus:outline-none focus:text-light-accent"
+							className="hover:text-light-accent focus:outline-hidden focus:text-light-accent"
 						>
 							NextJs
 						</Link>

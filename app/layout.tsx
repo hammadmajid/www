@@ -37,10 +37,10 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${atkinsonHyperlegible.className} h-full flex flex-col antialiased max-w-screen-lg mx-auto`}
+          className={`${atkinsonHyperlegible.className} h-full flex flex-col antialiased max-w-(--breakpoint-lg) mx-auto`}
         >
           <Navbar />
-          <main className="px-4 py-6 flex-grow space-y-2">{children}</main>
+          <main className="px-4 py-6 grow space-y-2">{children}</main>
           <Footer />
           <Analytics />
         </body>

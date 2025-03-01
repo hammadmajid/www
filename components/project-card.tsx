@@ -25,14 +25,14 @@ export default function ProjectsCard({ project }: ProjectCardProps) {
 					)}
 				</div>
 			</div>
-			<p className="flex-grow mb-4">{project.description}</p>
+			<p className="grow mb-4">{project.description}</p>
 			<ul className="flex flex-wrap gap-2">
 				{project.topics &&
 					project.topics.map((topics) => (
 						<li key={topics}>
 							<Link
 								href={`/projects/?${topics}`}
-								className="text-light-accent hover:text-light-accent-hover text-sm bg-gray-100 px-2 py-1 rounded"
+								className="text-light-accent hover:text-light-accent-hover text-sm bg-gray-100 px-2 py-1 rounded-sm"
 							>
 								{topics}
 							</Link>
