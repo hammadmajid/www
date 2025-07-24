@@ -33,6 +33,13 @@ export default function Typography({ children, className, size = "base", variant
         sizeClasses[size],
         variantClasses[variant],
 
+        // Text color
+        "prose-p:text-primary/95 prose-a:text-primary/95 prose-a:font-semibold",
+        "prose-blockquote:text-primary/95",
+        "prose-ul:text-primary/95 prose-ol:text-primary/95",
+        "prose-table:text-primary/95",
+        "prose-strong:text-primary/95 prose-em:text-primary/95",
+
         // Headings
         "prose-headings:text-primary/95 prose-headings:text-balance prose-headings:tracking-tight",
         "prose-h1:scroll-m-20 prose-h1:text-4xl prose-h1:font-extrabold",
