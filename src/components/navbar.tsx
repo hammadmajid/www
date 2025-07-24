@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerHeader, DrawerTitle } from "@/components/ui/drawer"
 
 const navigationLinks = [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
-    { name: "Resume", href: "/resume" },
+    { name: "Home", href: "/#home" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Contact", href: "/#contact" },
+    { name: "Resume", href: "/#resume" },
 ]
 
 export default function Navbar() {
@@ -33,17 +33,17 @@ export default function Navbar() {
     }, [])
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-                {/* Application Title */}
-                <div className="flex items-center">
-                    <Link href="/" className="text-xl font-bold text-foreground hover:text-foreground/80 transition-colors">
-                        MyApp
+        <header className="sticky top-4 z-50 w-full px-4 md:px-6">
+            <div className="mx-auto max-w-4xl flex h-14 items-center justify-between px-6 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-full shadow-lg">
+                {/* Mobile Application Title */}
+                <div className="flex items-center md:hidden">
+                    <Link href="/#home" className="text-xl font-bold text-foreground hover:text-foreground/80 transition-colors">
+                        Hammad M.
                     </Link>
                 </div>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-6">
+                {/* Desktop Navigation - Centered */}
+                <nav className="hidden md:flex items-center space-x-6 mx-auto">
                     {navigationLinks.map((link) => (
                         <Link
                             key={link.name}
