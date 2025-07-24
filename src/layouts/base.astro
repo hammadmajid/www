@@ -1,6 +1,7 @@
 ---
 import Typography from "@/components/typography";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import "../styles/global.css";
 
 export interface Props {
@@ -23,8 +24,11 @@ const { title, description } = Astro.props;
 	<body class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 		<Navbar client:load />
 		<Typography>
-			<slot />
+			<main class="py-8">
+				<slot />
+			</main>
 		</Typography>
+		<Footer client:load />
 	</body>
 </html>
 
