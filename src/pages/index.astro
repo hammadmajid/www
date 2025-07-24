@@ -1,16 +1,58 @@
 ---
-
+import Base from "../layouts/base.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Hammad Majid" description="Software dev">
+	<h1 class="">Hammad Majid</h1>
+	<p>
+		Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. <em>Integer nec odio.</em> Praesent libero. Sed cursus ante dapibus diam.
+	</p>
+	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus itaque maxime tempora doloremque in, quis provident culpa repudiandae alias fuga esse minima dolorem! Sit quis dolor possimus vel quasi praesentium! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates accusamus quia possimus ad, suscipit ipsam aliquam aperiam. Enim iusto maxime sapiente distinctio soluta voluptatibus, placeat officiis, ab veniam perspiciatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus consequuntur quisquam dolores cumque perspiciatis excepturi sint, beatae error modi qui. Nesciunt at temporibus assumenda omnis illum deleniti quis soluta velit?</p>
+	<blockquote>
+		"Design is not just what it looks like and feels like. Design is how it works." – Steve Jobs
+	</blockquote>
+	<ul>
+		<li>First unordered item</li>
+		<li>Second unordered item with <strong>bold</strong> text</li>
+		<li>Third unordered item</li>
+	</ul>
+	<ol>
+		<li>First ordered item</li>
+		<li>Second ordered item</li>
+		<li>Third ordered item with <em>emphasis</em></li>
+	</ol>
+	<p>
+		Here is some inline code: <code>console.log('Hello, world!')</code> within a sentence.
+	</p>
+	<pre><code>function greet(name) &#123;
+		return `Hello, &#123name}!`;
+&#125;
+</code></pre>
+</code></pre>
+	<p>
+		Visit <a href="https://example.com">this link</a> for more info. <small>Last updated: 2024</small>
+	</p>
+	<hr>
+	<table>
+		<thead>
+			<tr>
+				<th>Feature</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>Bold</strong></td>
+				<td>Highlights important text</td>
+			</tr>
+			<tr>
+				<td><em>Italic</em></td>
+				<td>Emphasizes text</td>
+			</tr>
+			<tr>
+				<td><code>Code</code></td>
+				<td>Displays code snippets</td>
+			</tr>
+		</tbody>
+	</table>
+</Base>
