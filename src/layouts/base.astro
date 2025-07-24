@@ -1,6 +1,6 @@
 ---
 import Typography from "@/components/typography";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar.astro";
 import Footer from "@/components/footer.astro";
 import "../styles/global.css";
 
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 	</head>
 	<body class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-		<Navbar client:load />
+		<Navbar />
 		<Typography>
 			<main class="py-8">
 				<slot />
@@ -57,4 +57,3 @@ const { title, description } = Astro.props;
 			attributeFilter: ["class"],
 		});
 	} -->
-</script>
