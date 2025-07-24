@@ -57,6 +57,15 @@ export default function Typography({ children, className, size = "base", variant
         "prose-tbody:m-0 prose-tbody:border-t prose-tbody:p-0 prose-tbody:even:bg-muted",
         "prose-td:border prose-td:px-4 prose-td:py-2 prose-td:text-left prose-td:[&[align=center]]:text-center prose-td:[&[align=right]]:text-right",
 
+        // Code styling
+        // Inline code - remove default prose styling and add custom styling
+        "prose-code:before:content-none prose-code:after:content-none",
+        "prose-code:bg-muted prose-code:text-foreground prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-code:font-medium",
+
+        // Code blocks
+        "prose-pre:bg-muted prose-pre:border prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto",
+        "prose-pre:text-foreground prose-pre:text-sm prose-pre:leading-relaxed",
+
         className,
       )}
     >
@@ -200,7 +209,7 @@ export function TypographyList({ items, children, ordered = false, className }: 
 
 export function TypographyInlineCode({ children, content, className }: TypographyElementProps) {
   return (
-    <code className={cn("bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold", className)}>
+    <code className={cn("bg-muted text-foreground px-1.5 py-0.5 rounded text-sm font-mono font-medium", className)}>
       {children || content}
     </code>
   )
