@@ -1,0 +1,74 @@
+---
+import ProjectCard from "./project-card";
+import type { Tech } from "./tech-list";
+import { TypographyH2 } from "./typography";
+
+interface Project {
+    title: string;
+    description: string;
+    techStack: Tech[];
+    livePreviewUrl?: string;
+    githubUrl?: string;
+}
+
+const projects: Project[] = [
+    {
+        title: "E-Commerce Dashboard",
+        description:
+            "A dashboard for managing e-commerce operations with real-time analytics.",
+        techStack: ["Next.js", "React", "TypeScript", "Tailwind"],
+        livePreviewUrl: "https://ecommerce-dashboard-demo.vercel.app",
+        githubUrl: "https://github.com/hammadmajid/ecommerce-dashboard",
+    },
+    {
+        title: "DevOps Infrastructure Manager",
+        description:
+            "Automates cloud resource provisioning and deployment pipelines.",
+        techStack: ["Terraform", "Ansible", "Node.js", "TypeScript"],
+        githubUrl: "https://github.com/hammadmajid/devops-infrastructure",
+    },
+    {
+        title: "Personal Portfolio Website",
+        description:
+            "A modern, responsive portfolio to showcase projects and skills.",
+        techStack: ["React", "MUI", "TypeScript", "Zod"],
+        livePreviewUrl: "https://hammadmajid.dev",
+        githubUrl: "https://github.com/hammadmajid/portfolio",
+    },
+    {
+        title: "API Gateway Service",
+        description:
+            "A scalable API gateway for authentication and service orchestration.",
+        techStack: ["Node.js", "Express", "TypeScript", "Zod"],
+        livePreviewUrl: "https://api-gateway-demo.herokuapp.com",
+        githubUrl: "https://github.com/hammadmajid/api-gateway",
+    },
+    {
+        title: "Internal Tools Suite",
+        description: "A suite of internal tools to boost team productivity.",
+        techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Node.js"],
+        livePreviewUrl: "https://internal-tools.company.com",
+    },
+];
+---
+
+<section>
+    <div class="mb-6">
+        <TypographyH2>projects</TypographyH2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+            projects.map((project) => (
+                <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    techStack={project.techStack}
+                    livePreviewUrl={project.livePreviewUrl}
+                    githubUrl={project.githubUrl}
+                    client:load
+                />
+            ))
+        }
+    </div>
+</section>
