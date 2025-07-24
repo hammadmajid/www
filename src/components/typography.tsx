@@ -53,11 +53,11 @@ export default function Typography({ children, className, size = "base", variant
         "prose-a:text-primary hover:prose-a:text-primary/80",
 
         // Code
-        "prose-code:relative prose-code:rounded prose-code:bg-secondary-foreground prose-code:px-[0.3rem] prose-code:py-[0.2rem]",
+        "prose-code:relative prose-code:rounded prose-code:text-muted prose-code:bg-secondary-foreground prose-code:px-[0.3rem] prose-code:py-[0.2rem]",
         "prose-code:font-mono prose-code:text-sm prose-code:font-semibold",
 
         // Pre/Code blocks
-        "prose-pre:bg-secondary-foreground prose-pre:border prose-pre:rounded-lg prose-pre:p-4",
+        "prose-pre:bg-secondary-foreground prose-pre:text-muted prose-pre:border prose-pre:rounded-lg prose-pre:p-4",
         "prose-pre:overflow-x-auto prose-pre:text-sm",
 
         // Blockquotes
