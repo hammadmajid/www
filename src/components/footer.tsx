@@ -14,7 +14,7 @@ export default function Footer() {
 
     return (
         <footer className="sticky bottom-4 z-50 w-full px-4 md:px-6 mt-16">
-            <div className="mx-auto max-w-4xl flex flex-col items-center justify-center py-6 px-6 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-full shadow-lg space-y-4">
+            <div className="mx-auto max-w-4xl flex flex-col items-center justify-center py-4 px-6 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-full shadow-lg">
                 {/* Social Icons Row */}
                 <div className="flex items-center space-x-6">
                     {socialLinks.map((link) => {
@@ -32,13 +32,6 @@ export default function Footer() {
                             </a>
                         )
                     })}
-                </div>
-
-                {/* Copyright Row */}
-                <div className="text-center">
-                    <p className="text-xs text-muted-foreground">
-                        © {currentYear} Hammad M. All rights reserved.
-                    </p>
                 </div>
             </div>
         </footer>
