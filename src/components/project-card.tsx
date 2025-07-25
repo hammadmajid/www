@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, EyeOff } from "lucide-react"
 import TechList, { type Tech } from "./tech-list"
+import { TypographyH3 } from "./typography"
 
 export interface ProjectCardProps {
   title: string
@@ -21,30 +22,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
   className = "",
 }) => {
-  // Truncate description to approximately 250 words
-  const truncateDescription = (text: string, maxWords = 250): string => {
-    const words = text.split(" ")
-    if (words.length <= maxWords) return text
-    return words.slice(0, maxWords).join(" ") + "..."
-  }
-
-  const truncatedDescription = truncateDescription(description)
-
   return (
     <Card
       className={`h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 ${className}`}
     >
-      <CardHeader className="pb-4">
+      <CardHeader>
         <CardTitle className="text-xl font-bold leading-tight line-clamp-2">{title}</CardTitle>
         <CardDescription className="text-sm text-muted-foreground leading-relaxed">
-          {truncatedDescription}
+          {description}
         </CardDescription>
       </CardHeader>
 
       <CardContent className="flex-1 flex flex-col gap-4">
         {/* Tech Stack Section */}
         <div className="space-y-2">
-          <h4 className="text-sm font-medium text-foreground">Technologies</h4>
+          <TypographyH3 className="sr-only text-sm font-medium text-foreground">Technologies</TypographyH3>
           <TechList stack={techStack} />
         </div>
 
