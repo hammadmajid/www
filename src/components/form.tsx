@@ -8,38 +8,22 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 
-type FormData = {
-    name: string
-    email: string
-    subject: string
-    message: string
-}
-
 export default function ContactForm() {
-    const [formData, setFormData] = useState<FormData>({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    })
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target
-        // Map form field names to state property names
-        const fieldName = name === "_name" ? "name" : name === "_email" ? "email" : name === "_subject" ? "subject" : "message"
-        setFormData((prev) => ({ ...prev, [fieldName]: value }))
-    }
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [subject, setSubject] = useState("")
+    const [message, setMessage] = useState("")
 
     return (
         <form action="https://formsubmit.co/hammadmajid@proton.me" method="POST" className="space-y-4 w-full">
             <div>
                 <Label htmlFor="name" className="sr-only">Name</Label>
-                <Input id="name" name="_name" value={formData.name} onChange={handleChange} placeholder="Name" required />
+                <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
             </div>
 
             <div>
                 <Label htmlFor="email" className="sr-only">Email</Label>
-                <Input id="email" name="_email" type="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
+                <Input id="email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
             </div>
 
             <div>
@@ -47,8 +31,8 @@ export default function ContactForm() {
                 <Input
                     id="subject"
                     name="_subject"
-                    value={formData.subject}
-                    onChange={handleChange}
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                     placeholder="Subject"
                     required
                 />
@@ -56,7 +40,7 @@ export default function ContactForm() {
 
             <div>
                 <Label htmlFor="message" className="sr-only">Message</Label>
-                <Textarea id="message" name="_message" rows={4} value={formData.message} onChange={handleChange} placeholder="Message" required />
+                <Textarea id="message" name="message" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" required />
             </div>
 
             <Button type="submit">
