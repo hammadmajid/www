@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 
+import { Send } from 'lucide-react';
+
 export default function ContactForm() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -44,6 +46,7 @@ export default function ContactForm() {
             </div>
 
             <Button type="submit">
+                <Send />
                 Send Message
             </Button>
         </form>
