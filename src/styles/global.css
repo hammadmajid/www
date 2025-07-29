@@ -120,4 +120,22 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Grid background pattern */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(55 65 81 / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(55 65 81 / 0.3) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: 0 0, 0 0;
+    width: 100%;
+    height: 400vh; /* Much larger height to cover long pages */
+    top: -50vh; /* Larger offset to accommodate more scroll distance */
+  }
+
+  .dark .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(75 85 99 / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(75 85 99 / 0.4) 1px, transparent 1px);
+  }
 }

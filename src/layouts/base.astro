@@ -20,9 +20,18 @@ const { title, description } = Astro.props;
 
 		<!-- Primary Meta Tags -->
 		<title>Hammad Majid - Software Developer & Web Engineer</title>
-		<meta name="title" content="Hammad Majid - Software Developer & Web Engineer" />
-		<meta name="description" content="Software developer passionate about building scalable applications with modern web technologies. Explore my projects, experience, and get in touch." />
-		<meta name="keywords" content="Hammad Majid, Software Developer, Web Developer, Full Stack Developer, React, TypeScript, JavaScript, Portfolio" />
+		<meta
+			name="title"
+			content="Hammad Majid - Software Developer & Web Engineer"
+		/>
+		<meta
+			name="description"
+			content="Software developer passionate about building scalable applications with modern web technologies. Explore my projects, experience, and get in touch."
+		/>
+		<meta
+			name="keywords"
+			content="Hammad Majid, Software Developer, Web Developer, Full Stack Developer, React, TypeScript, JavaScript, Portfolio"
+		/>
 		<meta name="author" content="Hammad Majid" />
 		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href="https://hammadmajid.pages.dev" />
@@ -30,9 +39,18 @@ const { title, description } = Astro.props;
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://hammadmajid.pages.dev" />
-		<meta property="og:title" content="Hammad Majid - Software Developer & Web Engineer" />
-		<meta property="og:description" content="Software developer passionate about building scalable applications with modern web technologies. Explore my projects, experience, and get in touch." />
-		<meta property="og:image" content="https://hammadmajid.pages.dev/og-image.jpg" />
+		<meta
+			property="og:title"
+			content="Hammad Majid - Software Developer & Web Engineer"
+		/>
+		<meta
+			property="og:description"
+			content="Software developer passionate about building scalable applications with modern web technologies. Explore my projects, experience, and get in touch."
+		/>
+		<meta
+			property="og:image"
+			content="https://hammadmajid.pages.dev/og-image.jpg"
+		/>
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:site_name" content="Hammad Majid" />
@@ -41,9 +59,18 @@ const { title, description } = Astro.props;
 		<!-- Twitter/X -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://hammadmajid.pages.dev" />
-		<meta property="twitter:title" content="Hammad Majid - Software Developer & Web Engineer" />
-		<meta property="twitter:description" content="Software developer passionate about building scalable applications with modern web technologies. Explore my projects, experience, and get in touch." />
-		<meta property="twitter:image" content="https://hammadmajid.pages.dev/og-image.jpg" />
+		<meta
+			property="twitter:title"
+			content="Hammad Majid - Software Developer & Web Engineer"
+		/>
+		<meta
+			property="twitter:description"
+			content="Software developer passionate about building scalable applications with modern web technologies. Explore my projects, experience, and get in touch."
+		/>
+		<meta
+			property="twitter:image"
+			content="https://hammadmajid.pages.dev/og-image.jpg"
+		/>
 		<meta property="twitter:creator" content="@hammadmajid_" />
 		<meta property="twitter:site" content="@hammadmajid_" />
 
@@ -54,29 +81,46 @@ const { title, description } = Astro.props;
 
 		<!-- Structured Data (JSON-LD) -->
 		<script is:inline type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Person",
-			"name": "Hammad Majid",
-			"jobTitle": "Software Developer",
-			"description": "Software developer passionate about building scalable applications with modern web technologies",
-			"url": "https://hammadmajid.pages.dev",
-			"sameAs": [
-				"https://github.com/hammadmajid",
-				"https://linkedin.com/in/hammadmajid",
-				"https://x.com/hammadmajid_"
-			],
-			"email": "hammadmajid@proton.me",
-			"knowsAbout": ["Software Development", "Web Development", "JavaScript", "TypeScript", "React", "Full Stack Development"]
-		}
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Hammad Majid",
+				"jobTitle": "Software Developer",
+				"description": "Software developer passionate about building scalable applications with modern web technologies",
+				"url": "https://hammadmajid.pages.dev",
+				"sameAs": [
+					"https://github.com/hammadmajid",
+					"https://linkedin.com/in/hammadmajid",
+					"https://x.com/hammadmajid_"
+				],
+				"email": "hammadmajid@proton.me",
+				"knowsAbout": [
+					"Software Development",
+					"Web Development",
+					"JavaScript",
+					"TypeScript",
+					"React",
+					"Full Stack Development"
+				]
+			}
 		</script>
 	</head>
-	<body class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-		<Navbar />
-		<main class="py-8">
-			<slot />
-		</main>
-		<Footer />
+	<body class="relative">
+		<!-- Grid Background with Parallax Effect -->
+		<div
+			id="grid-background"
+			class="fixed inset-0 opacity-40 pointer-events-none z-[-1] overflow-hidden"
+		>
+			<div class="absolute inset-0 bg-grid-pattern" id="grid-pattern"></div>
+		</div>
+
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+			<Navbar />
+			<main class="py-8">
+				<slot />
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>
 
@@ -104,5 +148,30 @@ const { title, description } = Astro.props;
 			attributes: true,
 			attributeFilter: ["class"],
 		});
+	}
+
+	// Parallax effect for grid background
+	const gridPattern = document.getElementById("grid-pattern");
+	if (gridPattern) {
+		let ticking = false;
+
+		function updateParallax() {
+			const scrollY = window.scrollY;
+			const parallaxSpeed = 0.3; // Reduced speed for subtler effect
+			const translateY = -(scrollY * parallaxSpeed); // Negative for proper parallax direction
+
+			// Use transform3d for better performance
+			gridPattern.style.transform = `translate3d(0, ${translateY}px, 0)`;
+			ticking = false;
+		}
+
+		function requestTick() {
+			if (!ticking) {
+				requestAnimationFrame(updateParallax);
+				ticking = true;
+			}
+		}
+
+		window.addEventListener("scroll", requestTick);
 	}
 </script>
