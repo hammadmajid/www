@@ -1,6 +1,7 @@
 ---
 import Navbar from "@/components/navbar.astro";
 import Footer from "@/components/footer.astro";
+import Typography from "@/components/typography.astro";
 import "../styles/global.css";
 ---
 
@@ -108,7 +109,9 @@ import "../styles/global.css";
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 			<Navbar />
 			<main class="py-8">
-				<slot />
+				<Typography>
+					<slot />
+				</Typography>
 			</main>
 			<Footer />
 		</div>
