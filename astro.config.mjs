@@ -26,5 +26,14 @@ export default defineConfig({
     port: 4321,
   },
 
-  adapter: cloudflare()
+  adapter: cloudflare({
+    imageService: "compile",
+    platformProxy: {
+      enabled: true,
+      configPath: 'wrangler.toml',
+      persist: {
+        path: './.cache/wrangler/v3'
+      },
+    },
+  }),
 });

@@ -1,0 +1,10 @@
+name = "hammadmajid"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-07-23"
+
+[[kv_namespaces]]
+binding = "SESSION"
+id = "f6d94b8f1a2f4a04abdba82e52919a9f"
+
+[env]
+production = {}
