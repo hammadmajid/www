@@ -9,9 +9,12 @@ import sitemap from '@astrojs/sitemap';
 
 import partytown from '@astrojs/partytown';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hammadmajid.pages.dev',
+
   vite: {
     plugins: [tailwindcss()]
   },
@@ -21,5 +24,7 @@ export default defineConfig({
   server: {
     host: 'portfolio.localhost',
     port: 4321,
-  }
+  },
+
+  adapter: cloudflare()
 });
