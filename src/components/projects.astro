@@ -1,7 +1,6 @@
 ---
-import ProjectCard from "./project-card";
-import type { Tech } from "./tech-list";
-import { TypographyH2 } from "./typography";
+import ProjectCard from "./project-card.astro";
+import type { Tech } from "./tech-list.astro";
 
 interface Project {
     title: string;
@@ -16,7 +15,16 @@ const projects: Project[] = [
         title: "Fintraq",
         description:
             "A modern finance tracking app built with Next.js, PostgreSQL, Drizzle, and shadcn/ui.",
-        techStack: ["Next.js", "PostgreSQL", "Drizzle", "shadcn/ui", "Zod", "Resend", "Tailwind", "TypeScript"],
+        techStack: [
+            "Next.js",
+            "PostgreSQL",
+            "Drizzle",
+            "shadcn/ui",
+            "Zod",
+            "Resend",
+            "Tailwind",
+            "TypeScript",
+        ],
         livePreviewUrl: "https://fintraq.xyz",
         githubUrl: "https://github.com/hammadmajid/fintraq",
     },
@@ -65,7 +73,7 @@ const projects: Project[] = [
 
 <section id="projects">
     <div class="mb-6">
-        <TypographyH2>Projects</TypographyH2>
+        <h2>Projects</h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
