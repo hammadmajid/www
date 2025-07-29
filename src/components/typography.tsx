@@ -34,7 +34,7 @@ export default function Typography({ children, className, size = "base", variant
         variantClasses[variant],
 
         // Text color
-        "prose-p:text-primary/95 prose-a:text-primary/95 prose-a:font-semibold",
+        "prose-p:text-foreground/85 prose-a:text-primary/95 prose-a:font-semibold",
         "prose-blockquote:text-primary/95",
         "prose-ul:text-primary/95 prose-ol:text-primary/95",
         "prose-table:text-primary/95",
