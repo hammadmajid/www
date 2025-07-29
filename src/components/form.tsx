@@ -18,14 +18,16 @@ export default function ContactForm() {
 
     return (
         <form action="https://formsubmit.co/hammadmajid@proton.me" method="POST" className="space-y-4 w-full">
-            <div>
-                <Label htmlFor="name" className="sr-only">Name</Label>
-                <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div>
+                    <Label htmlFor="name" className="sr-only">Name</Label>
+                    <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
+                </div>
 
-            <div>
-                <Label htmlFor="email" className="sr-only">Email</Label>
-                <Input id="email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+                <div>
+                    <Label htmlFor="email" className="sr-only">Email</Label>
+                    <Input id="email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+                </div>
             </div>
 
             <div>
