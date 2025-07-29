@@ -6,7 +6,13 @@ import {
     CardDescription,
     CardContent,
 } from "@/components/ui/card";
-import Typography, { TypographyH2 } from "@/components/typography";
+import Typography, {
+    TypographyH2,
+    TypographyH4,
+    TypographyP,
+    TypographyList,
+    TypographySmall,
+} from "@/components/typography";
 ---
 
 <section id="home" class="space-y-6">
@@ -36,51 +42,36 @@ import Typography, { TypographyH2 } from "@/components/typography";
             <CardContent>
                 <div class="space-y-4">
                     <div class="border-l-2 border-primary/20 pl-4">
-                        <h4 class="font-semibold text-sm">
+                        <TypographyH4 className="text-sm">
                             Full Stack Developer
-                        </h4>
-                        <p class="text-xs text-muted-foreground">
+                        </TypographyH4>
+                        <TypographySmall className="text-muted-foreground">
                             Codealpha • June 2025 - July 2025
-                        </p>
-                        <ul
-                            class="text-xs mt-2 space-y-1 text-muted-foreground"
-                        >
-                            <li>
-                                • Summer internship developing full-stack
-                                applications
-                            </li>
-                            <li>
-                                • Built Pubment social media platform with MERN
-                                stack
-                            </li>
-                            <li>
-                                • Developed Prepen e-commerce platform with
-                                Next.js
-                            </li>
-                        </ul>
+                        </TypographySmall>
+                        <TypographyList
+                            className="text-xs mt-2 space-y-1 text-muted-foreground"
+                            items={[
+                                "Summer internship developing full-stack applications",
+                                "Built Pubment social media platform with MERN stack",
+                                "Developed Prepen e-commerce platform with Next.js",
+                            ]}
+                        />
                     </div>
                     <div class="border-l-2 border-primary/20 pl-4">
-                        <h4 class="font-semibold text-sm">
+                        <TypographyH4 className="text-sm">
                             Freelance Full Stack Developer
-                        </h4>
-                        <p class="text-xs text-muted-foreground">
+                        </TypographyH4>
+                        <TypographySmall className="text-muted-foreground">
                             Remote • 2023 - Present
-                        </p>
-                        <ul
-                            class="text-xs mt-2 space-y-1 text-muted-foreground"
-                        >
-                            <li>
-                                • Developed Fintraq finance tracking application
-                            </li>
-                            <li>
-                                • Built modern web applications with Next.js and
-                                TypeScript
-                            </li>
-                            <li>
-                                • Worked with various clients on full-stack
-                                solutions
-                            </li>
-                        </ul>
+                        </TypographySmall>
+                        <TypographyList
+                            className="text-xs mt-2 space-y-1 text-muted-foreground"
+                            items={[
+                                "Developed Fintraq finance tracking application",
+                                "Built modern web applications with Next.js and TypeScript",
+                                "Worked with various clients on full-stack solutions",
+                            ]}
+                        />
                     </div>
                 </div>
             </CardContent>
@@ -93,33 +84,35 @@ import Typography, { TypographyH2 } from "@/components/typography";
             <CardContent>
                 <div class="space-y-4">
                     <div class="border-l-2 border-primary/20 pl-4">
-                        <h4 class="font-semibold text-sm">
+                        <TypographyH4 className="text-sm">
                             Bachelor of Computer Science
-                        </h4>
-                        <p class="text-xs text-muted-foreground">
+                        </TypographyH4>
+                        <TypographySmall className="text-muted-foreground">
                             SZABIST University • 2023 - 2027
-                        </p>
-                        <ul
-                            class="text-xs mt-2 space-y-1 text-muted-foreground"
-                        >
-                            <li>• Modern Web Technologies</li>
-                            <li>• Data Structures & Algorithms</li>
-                            <li>• Database Systems</li>
-                        </ul>
+                        </TypographySmall>
+                        <TypographyList
+                            className="text-xs mt-2 space-y-1 text-muted-foreground"
+                            items={[
+                                "Modern Web Technologies",
+                                "Data Structures & Algorithms",
+                                "Database Systems",
+                            ]}
+                        />
                     </div>
                     <div class="border-l-2 border-primary/20 pl-4">
-                        <h4 class="font-semibold text-sm">
+                        <TypographyH4 className="text-sm">
                             Relevant Certifications
-                        </h4>
-                        <p class="text-xs text-muted-foreground">
+                        </TypographyH4>
+                        <TypographySmall className="text-muted-foreground">
                             Frontend Masters • 2025
-                        </p>
-                        <ul
-                            class="text-xs mt-2 space-y-1 text-muted-foreground"
-                        >
-                            <li>• Full Stack v3 (March 2025)</li>
-                            <li>• JavaScript Hard Parts (February 2025)</li>
-                        </ul>
+                        </TypographySmall>
+                        <TypographyList
+                            className="text-xs mt-2 space-y-1 text-muted-foreground"
+                            items={[
+                                "Full Stack v3 (March 2025)",
+                                "JavaScript Hard Parts (February 2025)",
+                            ]}
+                        />
                     </div>
                 </div>
             </CardContent>
