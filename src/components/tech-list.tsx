@@ -10,6 +10,20 @@ import {
   SiTypescript,
   SiNodedotjs,
   SiExpress,
+  SiTrpc,
+  SiSanity,
+  SiPrisma,
+  SiClerk,
+  SiDrizzle,
+  SiSupabase,
+  SiStripe,
+  SiVercel,
+  SiDocker,
+  SiReactrouter,
+  SiShadcnui,
+  SiCaddy,
+  SiMongodb,
+  SiPostgresql,
 } from "@icons-pack/react-simple-icons"
 import type { JSX } from "react" // Import JSX to fix the undeclared variable error
 
@@ -24,6 +38,20 @@ export type Tech =
   | "TypeScript"
   | "Node.js"
   | "Express"
+  | "tRPC"
+  | "Sanity"
+  | "Prisma"
+  | "Clerk"
+  | "Drizzle"
+  | "Supabase"
+  | "Stripe"
+  | "Vercel"
+  | "Docker"
+  | "React Router"
+  | "shadcn/ui"
+  | "Caddy"
+  | "MongoDB"
+  | "PostgreSQL"
 
 interface TechListProps {
   stack: Tech[]
@@ -40,6 +68,20 @@ const techIcons: Record<Tech, JSX.Element> = {
   TypeScript: <SiTypescript />,
   "Node.js": <SiNodedotjs />,
   Express: <SiExpress />,
+  "tRPC": <SiTrpc />,
+  Sanity: <SiSanity />,
+  Prisma: <SiPrisma />,
+  Clerk: <SiClerk />,
+  Drizzle: <SiDrizzle />,
+  Supabase: <SiSupabase />,
+  Stripe: <SiStripe />,
+  Vercel: <SiVercel />,
+  Docker: <SiDocker />,
+  "React Router": <SiReactrouter />,
+  "shadcn/ui": <SiShadcnui />,
+  Caddy: <SiCaddy />,
+  MongoDB: <SiMongodb />,
+  PostgreSQL: <SiPostgresql />,
 }
 
 const pillBaseStyles =
