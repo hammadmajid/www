@@ -13,13 +13,22 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
+
   site: 'https://hammadmajid.pages.dev',
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    resolve: {
+      // Use react-dom/server.edge instead of react-dom/server.browser for React 19.
+      // Without this, MessageChannel from node:worker_threads needs to be polyfilled.
+      alias: {
+        "react-dom/server": "react-dom/server.edge",
+      },
+    },
   },
 
-  integrations: [react(), sitemap(), partytown()],
+    integrations: [react(), sitemap(), partytown()],
 
   server: {
     host: 'portfolio.localhost',
