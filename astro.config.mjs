@@ -17,4 +17,9 @@ export default defineConfig({
   },
 
   integrations: [react(), sitemap(), partytown()],
+
+  server: {
+    host: 'portfolio.localhost',
+    port: 4321,
+  }
 });
