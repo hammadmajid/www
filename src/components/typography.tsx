@@ -98,7 +98,7 @@ export function TypographyH1({ children, content, className }: TypographyElement
 
 export function TypographyH2({ children, content, className }: TypographyElementProps) {
   return (
-    <h2 className={cn("scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0", className)}>
+    <h2 className={cn("scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0", className)}>
       {children || content}
     </h2>
   )

@@ -106,13 +106,10 @@ const { title, description } = Astro.props;
 		</script>
 	</head>
 	<body class="relative">
-		<!-- Grid Background with Parallax Effect -->
+		<!-- Fixed Grid Background -->
 		<div
-			id="grid-background"
-			class="fixed inset-0 opacity-40 pointer-events-none z-[-1] overflow-hidden"
-		>
-			<div class="absolute inset-0 bg-grid-pattern" id="grid-pattern"></div>
-		</div>
+			class="fixed inset-0 opacity-40 pointer-events-none z-[-1] bg-grid-pattern"
+		></div>
 
 		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 			<Navbar />
@@ -148,30 +145,5 @@ const { title, description } = Astro.props;
 			attributes: true,
 			attributeFilter: ["class"],
 		});
-	}
-
-	// Parallax effect for grid background
-	const gridPattern = document.getElementById("grid-pattern");
-	if (gridPattern) {
-		let ticking = false;
-
-		function updateParallax() {
-			const scrollY = window.scrollY;
-			const parallaxSpeed = 0.3; // Reduced speed for subtler effect
-			const translateY = -(scrollY * parallaxSpeed); // Negative for proper parallax direction
-
-			// Use transform3d for better performance
-			gridPattern.style.transform = `translate3d(0, ${translateY}px, 0)`;
-			ticking = false;
-		}
-
-		function requestTick() {
-			if (!ticking) {
-				requestAnimationFrame(updateParallax);
-				ticking = true;
-			}
-		}
-
-		window.addEventListener("scroll", requestTick);
 	}
 </script>

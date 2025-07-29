@@ -126,11 +126,11 @@
     background-image:
       linear-gradient(to right, rgb(55 65 81 / 0.3) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(55 65 81 / 0.3) 1px, transparent 1px);
-    background-size: 64px 64px;
+    background-size: 24px 24px;
     background-position: 0 0, 0 0;
     width: 100%;
-    height: 400vh; /* Much larger height to cover long pages */
-    top: -50vh; /* Larger offset to accommodate more scroll distance */
+    height: 100%;
+    background-attachment: fixed;
   }
 
   .dark .bg-grid-pattern {
