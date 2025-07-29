@@ -24,6 +24,7 @@ import {
   SiCaddy,
   SiMongodb,
   SiPostgresql,
+  SiResend,
 } from "@icons-pack/react-simple-icons"
 import type { JSX } from "react" // Import JSX to fix the undeclared variable error
 
@@ -52,6 +53,7 @@ export type Tech =
   | "Caddy"
   | "MongoDB"
   | "PostgreSQL"
+  | "Resend"
 
 interface TechListProps {
   stack: Tech[]
@@ -82,6 +84,7 @@ const techIcons: Record<Tech, JSX.Element> = {
   Caddy: <SiCaddy />,
   MongoDB: <SiMongodb />,
   PostgreSQL: <SiPostgresql />,
+  Resend: <SiResend />,
 }
 
 const pillBaseStyles =
