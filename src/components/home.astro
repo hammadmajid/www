@@ -2,7 +2,6 @@
 import {
     Card,
     CardHeader,
-    CardTitle,
     CardDescription,
     CardContent,
 } from "@/components/ui/card";
@@ -35,7 +34,7 @@ import Typography, {
     </Card>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="gap-2">
+        <Card client:load className="gap-2">
             <CardHeader>
                 <CardDescription> Experience </CardDescription>
             </CardHeader>
@@ -77,7 +76,7 @@ import Typography, {
             </CardContent>
         </Card>
 
-        <Card className="gap-2">
+        <Card client:load className="gap-2">
             <CardHeader>
                 <CardDescription> Certifications </CardDescription>
             </CardHeader>
@@ -117,7 +116,7 @@ import Typography, {
             </CardContent>
         </Card>
 
-        <Card className="gap-2">
+        <Card client:load className="gap-2">
             <CardHeader>
                 <CardDescription> Education </CardDescription>
             </CardHeader>
@@ -143,7 +142,7 @@ import Typography, {
             </CardContent>
         </Card>
 
-        <Card className="gap-2">
+        <Card client:load className="gap-2">
             <CardHeader>
                 <CardDescription className="sr-only"> Social </CardDescription>
             </CardHeader>
