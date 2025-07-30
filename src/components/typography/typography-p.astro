@@ -17,7 +17,7 @@ const sizeClasses = {
 };
 ---
 
-<p class={cn("leading-7 [&:not(:first-child)]:mt-6", sizeClasses[size], className)}>
+<p class={cn("leading-7 text-secondary-foreground/80 [&:not(:first-child)]:mt-6", sizeClasses[size], className)}>
   {content}
   <slot />
 </p>

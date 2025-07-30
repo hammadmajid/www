@@ -1,6 +1,7 @@
 ---
 import ProjectCard from "./project-card.astro";
 import type { Tech } from "@/types/tech";
+import { TypographyH2, TypographyMuted } from "./typography";
 
 interface Project {
     title: string;
@@ -73,7 +74,10 @@ const projects: Project[] = [
 
 <section id="projects">
     <div class="mb-6">
-        <h2>Projects</h2>
+        <TypographyH2>Projects</TypographyH2>
+        <TypographyMuted class="text-muted-foreground mb-6">
+            Here are some of the projects I've worked on recently.
+        </TypographyMuted>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
