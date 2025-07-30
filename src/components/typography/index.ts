@@ -10,3 +10,4 @@ export { default as TypographyLead } from './typography-lead.astro';
 export { default as TypographyLarge } from './typography-large.astro';
 export { default as TypographySmall } from './typography-small.astro';
 export { default as TypographyMuted } from './typography-muted.astro';
+export { default as TypographyLink } from './typography-link.astro';
