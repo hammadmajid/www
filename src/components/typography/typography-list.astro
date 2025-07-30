@@ -1,0 +1,39 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  items?: string[];
+  ordered?: boolean;
+  class?: string;
+  size?: "sm" | "base" | "lg" | "xl";
+}
+
+const { items, ordered = false, class: className, size = "base" } = Astro.props;
+
+const sizeClasses = {
+  sm: "prose-sm",
+  base: "prose",
+  lg: "prose-lg",
+  xl: "prose-xl",
+};
+
+const listClassName = ordered
+  ? "my-6 ml-6 list-decimal [&>li]:mt-2"
+  : "my-6 ml-6 list-disc [&>li]:mt-2";
+---
+
+{ordered ? (
+  <ol class={cn(listClassName, sizeClasses[size], className)}>
+    {items?.map((item) => (
+      <li>{item}</li>
+    ))}
+    <slot />
+  </ol>
+) : (
+  <ul class={cn(listClassName, sizeClasses[size], className)}>
+    {items?.map((item) => (
+      <li>{item}</li>
+    ))}
+    <slot />
+  </ul>
+)}
