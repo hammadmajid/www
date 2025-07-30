@@ -1,19 +1,19 @@
 ---
-import Card from "@/components/ui/card.astro"
-import Button from "@/components/ui/button.astro"
-import TechList from "./tech-list.astro"
-import type { Tech } from "@/types/tech"
-import ExternalLink from "@lucide/astro/icons/external-link"
-import EyeOff from "@lucide/astro/icons/eye-off"
-import Github from "@lucide/astro/icons/github"
+import Button from "@/components/ui/button.astro";
+import TechList from "./tech-list.astro";
+import type { Tech } from "@/types/tech";
+import ExternalLink from "@lucide/astro/icons/external-link";
+import EyeOff from "@lucide/astro/icons/eye-off";
+import Github from "@lucide/astro/icons/github";
+import { cn } from "@/lib/utils";
 
 export interface Props {
-  title: string
-  description: string
-  techStack: Tech[]
-  livePreviewUrl?: string
-  githubUrl?: string
-  class?: string
+  title: string;
+  description: string;
+  techStack: Tech[];
+  livePreviewUrl?: string;
+  githubUrl?: string;
+  class?: string;
 }
 
 const {
@@ -23,77 +23,100 @@ const {
   livePreviewUrl,
   githubUrl,
   class: className = "",
-} = Astro.props
+} = Astro.props;
+
+const cardClasses = cn(
+  "bg-card/20 text-card-foreground flex flex-col gap-6 rounded-4xl border border-accent-foreground/20 py-6 backdrop-blur-md supports-[backdrop-filter]:bg-card/10 shadow-xl shadow-black/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-accent-foreground/10 before:via-transparent before:to-transparent before:pointer-events-none",
+  "h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/5",
+  className,
+);
 ---
 
-<Card
-  class={`h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 ${className}`}
->
-  <h3 slot="title" class="text-xl font-bold leading-tight line-clamp-2">{title}</h3>
-  <p slot="description" class="text-sm text-muted-foreground leading-relaxed">
-    {description}
-  </p>
+<div data-slot="card" class={cardClasses}>
+  <!-- Card Header -->
+  <div
+    data-slot="card-header"
+    class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
+  >
+    <div
+      data-slot="card-title"
+      class="text-xl font-bold leading-tight line-clamp-2"
+    >
+      {title}
+    </div>
+    <div
+      data-slot="card-description"
+      class="text-muted-foreground text-sm leading-relaxed"
+    >
+      {description}
+    </div>
+  </div>
 
-  <div slot="content" class="flex flex-col h-full">
+  <!-- Card Content -->
+  <div data-slot="card-content" class="px-6 flex-1 flex flex-col gap-4">
     <!-- Tech Stack Section -->
-    <div class="space-y-2 flex-1">
-      <h4 class="sr-only text-sm font-medium text-foreground">Technologies</h4>
+    <div class="space-y-2">
+      <h3 class="sr-only text-sm font-medium text-foreground">Technologies</h3>
       <TechList stack={techStack} />
     </div>
 
     <!-- Action Buttons - Always present to maintain consistent layout -->
     <div class="mt-auto pt-4 flex gap-2">
       <!-- Live Preview Button -->
-      {livePreviewUrl ? (
-        <Button size="sm" class="flex-1">
-          <a
-            href={livePreviewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2"
+      {
+        livePreviewUrl ? (
+          <Button size="sm" class="flex-1">
+            <a
+              href={livePreviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2"
+            >
+              <ExternalLink class="w-4 h-4" />
+              Live Preview
+            </a>
+          </Button>
+        ) : (
+          <Button
+            size="sm"
+            variant="outline"
+            class="flex-1 inline-flex items-center gap-2 cursor-not-allowed opacity-50 bg-transparent"
+            title="Live preview not available"
+            disabled
           >
-            <ExternalLink class="w-4 h-4" />
-            Live Preview
-          </a>
-        </Button>
-      ) : (
-        <Button
-          size="sm"
-          variant="outline"
-          class="flex-1 inline-flex items-center gap-2 cursor-not-allowed opacity-50 bg-transparent"
-          title="Live preview not available"
-          disabled
-        >
-          <EyeOff class="w-4 h-4" />
-          No Preview
-        </Button>
-      )}
+            <EyeOff class="w-4 h-4" />
+            No Preview
+          </Button>
+        )
+      }
 
       <!-- GitHub Button -->
-      {githubUrl ? (
-        <Button size="sm" variant="outline" class="flex-1 bg-transparent">
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2"
+      {
+        githubUrl ? (
+          <Button size="sm" variant="outline" class="flex-1 bg-transparent">
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2"
+            >
+              <Github class="w-4 h-4" />
+              GitHub
+            </a>
+          </Button>
+        ) : (
+          <Button
+            size="sm"
+            variant="outline"
+            class="flex-1 inline-flex items-center gap-2 cursor-not-allowed opacity-50 bg-transparent"
+            title="GitHub repository not available"
+            disabled
           >
             <Github class="w-4 h-4" />
-            GitHub
-          </a>
-        </Button>
-      ) : (
-        <Button
-          size="sm"
-          variant="outline"
-          class="flex-1 inline-flex items-center gap-2 cursor-not-allowed opacity-50 bg-transparent"
-          title="GitHub repository not available"
-          disabled
-        >
-          <Github class="w-4 h-4" />
-          Private
-        </Button>
-      )}
+            Private
+          </Button>
+        )
+      }
     </div>
   </div>
-</Card>
+</div>
