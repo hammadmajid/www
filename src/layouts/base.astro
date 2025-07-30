@@ -102,15 +102,23 @@ import "../styles/global.css";
 		<!-- Fixed Grid Background -->
 		<div
 			class="fixed inset-0 opacity-40 pointer-events-none z-[-1] bg-grid-pattern"
-		></div>
+		>
+		</div>
 
-		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+		<div class="max-w-4xl mx-auto sm:px-6 lg:px-8 relative z-10">
 			<Navbar />
 			<main class="py-8">
 				<slot />
 			</main>
 			<Footer />
 		</div>
+		<!-- Cloudflare Web Analytics -->
+		<script
+			is:inline
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "d874a364e42a48888f09f59ef236a28b"}'
+			type="text/partytown"></script><!-- End Cloudflare Web Analytics -->
 	</body>
 </html>
 

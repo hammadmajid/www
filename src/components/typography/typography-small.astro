@@ -1,0 +1,23 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  content?: string;
+  class?: string;
+  size?: "sm" | "base" | "lg" | "xl";
+}
+
+const { content, class: className, size = "base" } = Astro.props;
+
+const sizeClasses = {
+  sm: "prose-sm",
+  base: "prose",
+  lg: "prose-lg",
+  xl: "prose-xl",
+};
+---
+
+<small class={cn("text-sm leading-none font-medium", sizeClasses[size], className)}>
+  {content}
+  <slot />
+</small>

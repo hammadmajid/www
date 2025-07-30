@@ -1,0 +1,23 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  content?: string;
+  class?: string;
+  size?: "sm" | "base" | "lg" | "xl";
+}
+
+const { content, class: className, size = "base" } = Astro.props;
+
+const sizeClasses = {
+  sm: "prose-sm",
+  base: "prose",
+  lg: "prose-lg",
+  xl: "prose-xl",
+};
+---
+
+<h2 class={cn("scroll-m-20 pb-2 text-3xl text-secondary-foreground/80 font-semibold tracking-tight first:mt-0", sizeClasses[size], className)}>
+  {content}
+  <slot />
+</h2>

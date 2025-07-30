@@ -1,0 +1,33 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+    content?: string;
+    href: string;
+    target?: "_blank" | "_self";
+    class?: string;
+    size?: "sm" | "base" | "lg" | "xl";
+}
+
+const { content, href, target, class: className, size = "base" } = Astro.props;
+
+const sizeClasses = {
+    sm: "prose-sm",
+    base: "prose",
+    lg: "prose-lg",
+    xl: "prose-xl",
+};
+---
+
+<a
+    {href}
+    {target}
+    class={cn(
+        "leading-7 text-primary underline decoration-primary/50 hover:decoration-primary/80",
+        sizeClasses[size],
+        className,
+    )}
+>
+    {content}
+    <slot />
+</a>

@@ -1,0 +1,77 @@
+---
+import Nextdotjs from "simple-icons-astro/Nextdotjs";
+import React from "simple-icons-astro/React";
+import Tailwindcss from "simple-icons-astro/Tailwindcss";
+import Mui from "simple-icons-astro/Mui";
+import Terraform from "simple-icons-astro/Terraform";
+import Ansible from "simple-icons-astro/Ansible";
+import Zod from "simple-icons-astro/Zod";
+import Typescript from "simple-icons-astro/Typescript";
+import Nodedotjs from "simple-icons-astro/Nodedotjs";
+import Express from "simple-icons-astro/Express";
+import Trpc from "simple-icons-astro/Trpc";
+import Sanity from "simple-icons-astro/Sanity";
+import Prisma from "simple-icons-astro/Prisma";
+import Clerk from "simple-icons-astro/Clerk";
+import Drizzle from "simple-icons-astro/Drizzle";
+import Supabase from "simple-icons-astro/Supabase";
+import Stripe from "simple-icons-astro/Stripe";
+import Vercel from "simple-icons-astro/Vercel";
+import Docker from "simple-icons-astro/Docker";
+import Reactrouter from "simple-icons-astro/Reactrouter";
+import Shadcnui from "simple-icons-astro/Shadcnui";
+import Caddy from "simple-icons-astro/Caddy";
+import Mongodb from "simple-icons-astro/Mongodb";
+import Postgresql from "simple-icons-astro/Postgresql";
+import Resend from "simple-icons-astro/Resend";
+import type { Tech } from '@/types/tech';
+
+export interface Props {
+  stack: Tech[]
+};
+
+const { stack } = Astro.props;
+
+const techIcons: Record<Tech, any> = {
+  "Next.js": Nextdotjs,
+  "React": React,
+  "Tailwind": Tailwindcss,
+  "MUI": Mui,
+  "Terraform": Terraform,
+  "Ansible": Ansible,
+  "Zod": Zod,
+  "TypeScript": Typescript,
+  "Node.js": Nodedotjs,
+  "Express": Express,
+  "tRPC": Trpc,
+  "Sanity": Sanity,
+  "Prisma": Prisma,
+  "Clerk": Clerk,
+  "Drizzle": Drizzle,
+  "Supabase": Supabase,
+  "Stripe": Stripe,
+  "Vercel": Vercel,
+  "Docker": Docker,
+  "React Router": Reactrouter,
+  "shadcn/ui": Shadcnui,
+  "Caddy": Caddy,
+  "MongoDB": Mongodb,
+  "PostgreSQL": Postgresql,
+  "Resend": Resend,
+};
+
+const pillBaseStyles = "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden";
+const pillColorStyles = "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground";
+---
+
+<div class="flex flex-wrap gap-2">
+  {stack.map((tech: Tech) => {
+    const IconComponent = techIcons[tech]
+    return (
+      <span class={`${pillBaseStyles} ${pillColorStyles}`}>
+        {IconComponent && <IconComponent />}
+        {tech}
+      </span>
+    )
+  })}
+</div>
