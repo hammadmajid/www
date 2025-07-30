@@ -1,0 +1,67 @@
+---
+import { TypographySmall } from "@/components/typography";
+import Github from "@lucide/astro/icons/github";
+import Linkedin from "@lucide/astro/icons/linkedin";
+import Twitter from "@lucide/astro/icons/twitter";
+import Mail from "@lucide/astro/icons/mail";
+---
+
+<div class="grid grid-cols-2 gap-4">
+    <a
+        href="https://github.com/hammadmajid"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center justify-center p-4 rounded-full hover:bg-accent-foreground/10 transition-colors group"
+        aria-label="GitHub"
+    >
+        <Github
+            class="h-8 w-8 mb-2 text-foreground/60 group-hover:text-foreground transition-colors"
+        />
+        <TypographySmall class="text-xs text-center sr-only"
+            >GitHub</TypographySmall
+        >
+    </a>
+
+    <a
+        href="https://linkedin.com/in/hammadmajid"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center justify-center p-4 rounded-full hover:bg-accent-foreground/10 transition-colors group"
+        aria-label="LinkedIn"
+    >
+        <Linkedin
+            class="h-8 w-8 mb-2 text-foreground/60 group-hover:text-foreground transition-colors"
+        />
+        <TypographySmall class="text-xs text-center sr-only"
+            >LinkedIn</TypographySmall
+        >
+    </a>
+
+    <a
+        href="https://x.com/hammadmajid_"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center justify-center p-4 rounded-full hover:bg-accent-foreground/10 transition-colors group"
+        aria-label="Twitter"
+    >
+        <Twitter
+            class="h-8 w-8 mb-2 text-foreground/60 group-hover:text-foreground transition-colors"
+        />
+        <TypographySmall class="text-xs text-center sr-only"
+            >Twitter</TypographySmall
+        >
+    </a>
+
+    <a
+        href="mailto:hammadmajid@proton.me"
+        class="flex flex-col items-center justify-center p-4 rounded-full hover:bg-accent-foreground/10 transition-colors group"
+        aria-label="Email"
+    >
+        <Mail
+            class="h-8 w-8 mb-2 text-foreground/60 group-hover:text-foreground transition-colors"
+        />
+        <TypographySmall class="text-xs text-center sr-only"
+            >Email</TypographySmall
+        >
+    </a>
+</div>
