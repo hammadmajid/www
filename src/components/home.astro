@@ -7,7 +7,9 @@ import {
     TypographyP,
     TypographyList,
     TypographySmall,
+    TypographyLink,
 } from "@/components/typography";
+import ExternalLink from "@lucide/astro/icons/external-link";
 ---
 
 <section id="home" class="space-y-6">
@@ -82,6 +84,14 @@ import {
                             covering modern web technologies, backend systems,
                             and deployment strategies.
                         </TypographyP>
+                        <TypographyLink
+                            href="https://static.frontendmasters.com/ud/c/e9ac431484/pApqiQbIWA/fullstack-v3.pdf"
+                            target="_blank"
+                            class="no-underline hover:underline flex justify-start items-center gap-2"
+                            >Credential<ExternalLink
+                                class="w-4 h-4"
+                            /></TypographyLink
+                        >
                     </div>
                     <div class="border-l-2 border-primary/20 pl-4">
                         <TypographyH4 class="text-sm">
@@ -95,6 +105,14 @@ import {
                             prototypes, asynchronous programming, and functional
                             programming principles.
                         </TypographyP>
+                        <TypographyLink
+                            href="https://static.frontendmasters.com/ud/c/e9ac431484/fjjCYVxYTO/javascript-hard-parts-v2.pdf"
+                            target="_blank"
+                            class="no-underline hover:underline flex justify-start items-center gap-2"
+                            >Credential<ExternalLink
+                                class="w-4 h-4"
+                            /></TypographyLink
+                        >
                     </div>
                 </div>
             </div>
