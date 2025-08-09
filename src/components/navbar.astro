@@ -15,9 +15,10 @@ const navigationLinks = [
                 navigationLinks.map((link) => (
                     <a
                         href={link.href}
-                        class="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                        class="relative text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 px-3 py-2 rounded-full group overflow-hidden"
                     >
-                        {link.name}
+                        <span class="relative z-10">{link.name}</span>
+                        <div class="absolute inset-0 bg-background/40 backdrop-blur-sm border border-accent-foreground/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 shadow-lg"></div>
                     </a>
                 ))
             }
