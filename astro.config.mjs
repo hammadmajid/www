@@ -11,7 +11,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'static',
 
   site: 'https://hammadmajid.pages.dev',
 
