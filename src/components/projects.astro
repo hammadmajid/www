@@ -101,7 +101,7 @@ const projects: Project[] = [
 ---
 
 <section id="projects">
-    <div class="mb-6">
+    <div class="mb-6 fade-in">
         <TypographyH2>Projects</TypographyH2>
         <TypographyMuted class="text-muted-foreground mb-6">
             Here are some of the projects I've worked on recently.
@@ -110,14 +110,16 @@ const projects: Project[] = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
-            projects.map((project) => (
-                <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    techStack={project.techStack}
-                    livePreviewUrl={project.livePreviewUrl}
-                    githubUrl={project.githubUrl}
-                />
+            projects.map((project, index) => (
+                <div class={`fade-in-delayed ${index % 2 === 0 ? 'fade-in-left' : 'fade-in-right'}`}>
+                    <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        techStack={project.techStack}
+                        livePreviewUrl={project.livePreviewUrl}
+                        githubUrl={project.githubUrl}
+                    />
+                </div>
             ))
         }
     </div>

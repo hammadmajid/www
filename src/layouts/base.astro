@@ -119,6 +119,30 @@ import "../styles/global.css";
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "d874a364e42a48888f09f59ef236a28b"}'
 			type="text/partytown"></script><!-- End Cloudflare Web Analytics -->
+
+		<!-- Scroll Animation Script -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', function() {
+				const observerOptions = {
+					threshold: 0.1,
+					rootMargin: '0px 0px -50px 0px'
+				};
+
+				const observer = new IntersectionObserver(function(entries) {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('animate');
+						}
+					});
+				}, observerOptions);
+
+				// Observe all elements with fade-in classes
+				const animatedElements = document.querySelectorAll('.fade-in, .fade-in-delayed, .fade-in-left, .fade-in-right');
+				animatedElements.forEach(el => {
+					observer.observe(el);
+				});
+			});
+		</script>
 	</body>
 </html>
 

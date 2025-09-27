@@ -13,9 +13,9 @@ import ExternalLink from "@lucide/astro/icons/external-link";
 ---
 
 <section id="home" class="space-y-6">
-    <TypographyH2>Hammad Majid</TypographyH2>
+    <TypographyH2 class="fade-in">Hammad Majid</TypographyH2>
 
-    <Card class="w-full gap-2 mb-6">
+    <Card class="w-full gap-2 mb-6 fade-in-delayed">
         <p slot="description"> whoami</p>
         <div slot="content" class="prose-p:max-w-full">
             <TypographyP>
@@ -25,7 +25,7 @@ import ExternalLink from "@lucide/astro/icons/external-link";
     </Card>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card class="gap-2">
+        <Card class="gap-2 fade-in-left">
             <p slot="description">Experience</p>
             <div slot="content">
                 <div class="space-y-4">
@@ -65,7 +65,7 @@ import ExternalLink from "@lucide/astro/icons/external-link";
             </div>
         </Card>
 
-        <Card class="gap-2">
+        <Card class="gap-2 fade-in-right">
             <p slot="description">Certifications</p>
             <div slot="content">
                 <div class="space-y-4">
@@ -115,7 +115,7 @@ import ExternalLink from "@lucide/astro/icons/external-link";
             </div>
         </Card>
 
-        <Card class="gap-2">
+        <Card class="gap-2 fade-in-left">
             <p slot="description">Education</p>
             <div slot="content">
                 <div class="space-y-4">
@@ -139,7 +139,7 @@ import ExternalLink from "@lucide/astro/icons/external-link";
             </div>
         </Card>
 
-        <Card class="gap-2">
+        <Card class="gap-2 fade-in-right">
             <p slot="description" class="sr-only">Social</p>
             <div slot="content">
                 <SocialLinks />

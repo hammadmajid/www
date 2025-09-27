@@ -4,13 +4,15 @@ import { TypographyH2, TypographyMuted } from "./typography";
 ---
 
 <section id="contact" class="w-full">
-    <TypographyH2>Contact</TypographyH2>
+    <TypographyH2 class="fade-in">Contact</TypographyH2>
 
     <div class="w-full">
-        <TypographyMuted class="text-muted-foreground mb-6">
+        <TypographyMuted class="text-muted-foreground mb-6 fade-in-delayed">
             Have a question or want to work together? Feel free to reach out!
         </TypographyMuted>
 
-        <ContactForm />
+        <div class="fade-in-delayed">
+            <ContactForm />
+        </div>
     </div>
 </section>
