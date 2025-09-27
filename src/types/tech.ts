@@ -23,4 +23,9 @@ export type Tech =
   | "Caddy"
   | "MongoDB"
   | "PostgreSQL"
-  | "Resend";
+  | "Resend"
+  | "Svelte"
+  | "Go"
+  | "Workers"
+  | "Skeleton"
+  | "SQLite";
