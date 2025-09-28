@@ -9,11 +9,7 @@ const commits = (await response.json()) as Array<any>;
 const latestCommit = commits[0];
 
 const commitSha = latestCommit.sha.substring(0, 7); // Short hash
-const commitDate = new Date(latestCommit.commit.author.date)
-    .toISOString()
-    .replace("T", " ")
-    .replace("Z", "")
-    .substring(0, 19); // YYYY-MM-DD HH:MM:SS format
+const commitDate = latestCommit.commit.author.date;
 const commitUrl = latestCommit.html_url;
 ---
 
@@ -22,5 +18,36 @@ const commitUrl = latestCommit.html_url;
 >
     built on <TypographyLink href={commitUrl} target="_blank"
         >{commitSha}</TypographyLink
-    > at {commitDate}
+    > <span id="commit-date" data-date={commitDate}>at {commitDate}</span>
 </footer>
+
+<script is:inline>
+function formatRelativeTime(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+    
+    const units = [
+        { name: 'year', seconds: 31536000 },
+        { name: 'month', seconds: 2592000 },
+        { name: 'day', seconds: 86400 },
+        { name: 'hour', seconds: 3600 },
+        { name: 'minute', seconds: 60 }
+    ];
+    
+    for (const unit of units) {
+        const count = Math.floor(diffInSeconds / unit.seconds);
+        if (count > 0) {
+            return `${count} ${unit.name}${count !== 1 ? 's' : ''} ago`;
+        }
+    }
+    
+    return 'just now';
+}
+
+const dateElement = document.getElementById('commit-date');
+if (dateElement) {
+    const dateString = dateElement.getAttribute('data-date');
+    dateElement.textContent = formatRelativeTime(dateString);
+}
+</script>
