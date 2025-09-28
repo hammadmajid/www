@@ -28,4 +28,5 @@ export type Tech =
   | "Go"
   | "Workers"
   | "Skeleton"
-  | "SQLite";
+  | "SQLite"
+  | "Inbound";

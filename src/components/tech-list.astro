@@ -29,6 +29,7 @@ import Go from "simple-icons-astro/Go";
 import Cloudflareworkers from "simple-icons-astro/Cloudflareworkers";
 import Sqlite from "simple-icons-astro/Sqlite";
 import Skeleton from "@lucide/astro/icons/skull";
+import Mail from "@lucide/astro/icons/mail";
 
 import type { Tech } from "@/types/tech";
 
@@ -69,6 +70,7 @@ const techIcons: Record<Tech, { icon: any; url: string }> = {
   Workers: { icon: Cloudflareworkers, url: "https://workers.cloudflare.com" },
   Skeleton: { icon: Skeleton, url: "https://skeleton.dev" },
   SQLite: { icon: Sqlite, url: "https://sqlite.org" },
+  Inbound: {icon: Mail, url: "https://inbound.new"}
 };
 
 // Export techIcons for use in other components
