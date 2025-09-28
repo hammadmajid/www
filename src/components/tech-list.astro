@@ -38,38 +38,41 @@ export interface Props {
 
 const { stack } = Astro.props;
 
-const techIcons: Record<Tech, any> = {
-  "Next.js": Nextdotjs,
-  React: React,
-  Tailwind: Tailwindcss,
-  MUI: Mui,
-  Terraform: Terraform,
-  Ansible: Ansible,
-  Zod: Zod,
-  TypeScript: Typescript,
-  "Node.js": Nodedotjs,
-  Express: Express,
-  tRPC: Trpc,
-  Sanity: Sanity,
-  Prisma: Prisma,
-  Clerk: Clerk,
-  Drizzle: Drizzle,
-  Supabase: Supabase,
-  Stripe: Stripe,
-  Vercel: Vercel,
-  Docker: Docker,
-  "React Router": Reactrouter,
-  "shadcn/ui": Shadcnui,
-  Caddy: Caddy,
-  MongoDB: Mongodb,
-  PostgreSQL: Postgresql,
-  Resend: Resend,
-  Svelte: Svelte,
-  Go: Go,
-  Workers: Cloudflareworkers,
-  Skeleton: Skeleton,
-  SQLite: Sqlite,
+const techIcons: Record<Tech, { icon: any; url: string }> = {
+  "Next.js": { icon: Nextdotjs, url: "https://nextjs.org" },
+  React: { icon: React, url: "https://react.dev" },
+  Tailwind: { icon: Tailwindcss, url: "https://tailwindcss.com" },
+  MUI: { icon: Mui, url: "https://mui.com" },
+  Terraform: { icon: Terraform, url: "https://terraform.io" },
+  Ansible: { icon: Ansible, url: "https://ansible.com" },
+  Zod: { icon: Zod, url: "https://zod.dev" },
+  TypeScript: { icon: Typescript, url: "https://typescriptlang.org" },
+  "Node.js": { icon: Nodedotjs, url: "https://nodejs.org" },
+  Express: { icon: Express, url: "https://expressjs.com" },
+  tRPC: { icon: Trpc, url: "https://trpc.io" },
+  Sanity: { icon: Sanity, url: "https://sanity.io" },
+  Prisma: { icon: Prisma, url: "https://prisma.io" },
+  Clerk: { icon: Clerk, url: "https://clerk.com" },
+  Drizzle: { icon: Drizzle, url: "https://orm.drizzle.team" },
+  Supabase: { icon: Supabase, url: "https://supabase.com" },
+  Stripe: { icon: Stripe, url: "https://stripe.com" },
+  Vercel: { icon: Vercel, url: "https://vercel.com" },
+  Docker: { icon: Docker, url: "https://docker.com" },
+  "React Router": { icon: Reactrouter, url: "https://reactrouter.com" },
+  "shadcn/ui": { icon: Shadcnui, url: "https://ui.shadcn.com" },
+  Caddy: { icon: Caddy, url: "https://caddyserver.com" },
+  MongoDB: { icon: Mongodb, url: "https://mongodb.com" },
+  PostgreSQL: { icon: Postgresql, url: "https://postgresql.org" },
+  Resend: { icon: Resend, url: "https://resend.com" },
+  Svelte: { icon: Svelte, url: "https://svelte.dev" },
+  Go: { icon: Go, url: "https://go.dev" },
+  Workers: { icon: Cloudflareworkers, url: "https://workers.cloudflare.com" },
+  Skeleton: { icon: Skeleton, url: "https://skeleton.dev" },
+  SQLite: { icon: Sqlite, url: "https://sqlite.org" },
 };
+
+// Export techIcons for use in other components
+export { techIcons };
 
 const pillBaseStyles =
   "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden";
@@ -80,12 +83,18 @@ const pillColorStyles =
 <div class="flex flex-wrap gap-2">
   {
     stack.map((tech: Tech) => {
-      const IconComponent = techIcons[tech];
+      const techInfo = techIcons[tech];
+      const IconComponent = techInfo?.icon;
       return (
-        <span class={`${pillBaseStyles} ${pillColorStyles}`}>
+        <a
+          href={techInfo?.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`${pillBaseStyles} ${pillColorStyles} no-underline hover:bg-accent hover:text-accent-foreground transition-colors`}
+        >
           {IconComponent && <IconComponent />}
           {tech}
-        </span>
+        </a>
       );
     })
   }
