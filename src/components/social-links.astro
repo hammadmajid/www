@@ -1,8 +1,8 @@
 ---
 import { TypographySmall } from "@/components/typography";
-import Github from "@lucide/astro/icons/github";
-import Linkedin from "@lucide/astro/icons/linkedin";
-import Instagram from "@lucide/astro/icons/instagram";
+import Github from "simple-icons-astro/Github";
+import Instagram from "simple-icons-astro/Instagram";
+import LinkedIn from "../assets/linkedin.png"
 import Mail from "@lucide/astro/icons/mail";
 ---
 
@@ -29,7 +29,7 @@ import Mail from "@lucide/astro/icons/mail";
         class="flex flex-col items-center justify-center p-4 rounded-full hover:bg-accent-foreground/10 transition-colors group"
         aria-label="LinkedIn"
     >
-        <Linkedin
+        <img src={LinkedIn.src} alt="LinkedIn" class="h-8 w-8 mb-2 text-foreground/60 group-hover:text-foreground transition-colors" />
             class="h-8 w-8 mb-2 text-foreground/60 group-hover:text-foreground transition-colors"
         />
         <TypographySmall class="text-xs text-center sr-only"
